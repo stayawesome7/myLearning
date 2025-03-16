@@ -3,8 +3,11 @@ sudo apt update && sudo apt install -y git
 mkdir myLearning
 cd myLearning
 git init
-git config --global user.name "geek"
-git config --global user.email "dukedixit@gmail.com"
+git init
+git commit -m "first commit"
+git branch -M main
+git remote add origin git@github.com:stayawesome7/testRepo.git //for ssh
+git push -u origin main
 
 
 */3 * * * * /bin/bash -c 'cd /home/geek/myLearning && git add . && git commit -m "Auto-sync: $(date)" && GIT_SSH_COMMAND="ssh -i ~/.ssh/id_rsa" git push origin main' >> /home/geek/git-cron.log 2>&1
