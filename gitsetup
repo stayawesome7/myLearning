@@ -1,0 +1,4 @@
+sudo apt update && sudo apt install -y git
+
+
+*/3 * * * * /bin/bash -c 'cd /home/geek/myLearning && git add . && git commit -m "Auto-sync: $(date)" && GIT_SSH_COMMAND="ssh -i ~/.ssh/id_rsa" git push origin main' >> /home/geek/git-cron.log 2>&1
