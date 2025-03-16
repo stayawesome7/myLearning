@@ -9,5 +9,14 @@ git branch -M main
 git remote add origin git@github.com:stayawesome7/testRepo.git //for ssh
 git push -u origin main
 
+ssh-keygen -t rsa -b 4096 -C "dukedixit@gmail.com" // without passphrase
+cat ~/.ssh/id_rsa.pub //Add the SSH Key to GitHub
+//Go to GitHub → Settings → SSH and GPG Keys → New SSH Key. Paste
+
+//Change the Git Remote to Use SSH
+git remote set-url origin git@github.com:stayawesome7/testRepo.git
+//Now, Git will use SSH authentication instead of HTTPS.
+
+
 
 */3 * * * * /bin/bash -c 'cd /home/geek/myLearning && git add . && git commit -m "Auto-sync: $(date)" && GIT_SSH_COMMAND="ssh -i ~/.ssh/id_rsa" git push origin main' >> /home/geek/git-cron.log 2>&1
